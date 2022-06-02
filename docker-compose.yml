@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_DB=ferretdb
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
+  ferretdb:
+    image: ghcr.io/ferretdb/ferretdb:latest
+    container_name: ferretdb
+    restart: on-failure
+    command: ["-listen-addr=:27017", "-postgresql-url=postgres://user@postgres:5432/ferretdb"]
+
+  connector:
+    container_name: connector
+    image: ghcr.io/nmshd/connector:alpha
+    environment:
+      CUSTOM_CONFIG_LOCATION: "/config.json"
+    volumes:
+      - ./config.json:/config.json:RO
+    ports:
+      - 8080:80
+
+networks:
+  default:
+    name: ferret_connector_network

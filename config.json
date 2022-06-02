@@ -1,0 +1,15 @@
+{
+  "transportLibrary": {
+    "platformClientId": "<client-id>",
+    "platformClientSecret": "<client-secret>"
+  },
+  "database": {
+    "connectionString": "mongodb://ferretdb:27017",
+    "dbName": "ferret_demo"
+  },
+  "infrastructure": {
+    "httpServer": {
+      "apiKey": "<api-key>"
+    }
+  }
+}
