@@ -11,13 +11,13 @@ services:
       - POSTGRES_HOST_AUTH_METHOD=trust
 
   ferretdb:
-    image: ghcr.io/ferretdb/ferretdb:latest
+    image: ghcr.io/ferretdb/ferretdb-dev:pr-retry-more
     container_name: ferretdb
     restart: on-failure
     environment:
       FERRETDB_POSTGRESQL_URL: postgres://user:password@postgres:5432/ferretdb
       FERRETDB_TELEMETRY: disable
-      FERRETDB_LOG_LEVEL: error
+      FERRETDB_LOG_LEVEL: warn
     depends_on:
       - postgres
 
