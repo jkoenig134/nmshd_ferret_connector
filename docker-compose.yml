@@ -16,6 +16,8 @@ services:
     restart: on-failure
     environment:
       FERRETDB_POSTGRESQL_URL: postgres://user:password@postgres:5432/ferretdb
+      FERRETDB_TELEMETRY: disable
+      FERRETDB_LOG_LEVEL: error
     depends_on:
       - postgres
 
@@ -25,7 +27,7 @@ services:
     environment:
       CUSTOM_CONFIG_LOCATION: "/config.json"
     volumes:
-      - ./config.json:/config.json:RO
+      - ./config.json:/config.json:ro
     ports:
       - 8080:80
     depends_on:
