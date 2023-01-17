@@ -9,7 +9,7 @@
   },
   "infrastructure": {
     "httpServer": {
-      "apiKey": "<api-key>"
+      "apiKey": "xyz"
     }
   }
 }

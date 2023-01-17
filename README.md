@@ -11,7 +11,7 @@ FerretDB is currently in early stages and it is not recommended to run a connect
 
 ## Running the example
 
-- replace `<client-id>`, `<client-secret>` and `<api-key>` in `config.json`
+- replace `<client-id>` and `<client-secret>` in `config.json`
 - run `docker compose up -d`
 
 ## Run on an existing PostgreSQL database
@@ -20,3 +20,8 @@ FerretDB is currently in early stages and it is not recommended to run a connect
 - remove the `postgres` service from the `docker-compose.yml`
 - update the postgresql-url for the ferretdb service in the `docker-compose.yml`
 - run `docker compose up -d`
+
+## Accessing the Connector
+
+- [Docs](http://localhost:8080/docs/swagger/) => api key: `xyz`
+- Programatically using the baseUrl `http://localhost:8080` and the api key `xyz`
