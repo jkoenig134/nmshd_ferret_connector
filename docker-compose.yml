@@ -16,6 +16,8 @@ services:
     restart: on-failure
     environment:
       FERRETDB_POSTGRESQL_URL: postgres://user:password@postgres:5432/ferretdb
+    depends_on:
+      - postgres
 
   connector:
     container_name: connector
@@ -26,6 +28,8 @@ services:
       - ./config.json:/config.json:RO
     ports:
       - 8080:80
+    depends_on:
+      - ferretdb
 
 networks:
   default:
