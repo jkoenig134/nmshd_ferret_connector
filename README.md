@@ -6,8 +6,8 @@ FerretDB is currently in early stages and it is not recommended to run a connect
 
 ## Prerequisites
 
-- linux
-- docker + docker compose
+- docker
+- docker compose
 
 ## Running the example
 
