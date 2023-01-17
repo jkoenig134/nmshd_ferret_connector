@@ -4,7 +4,7 @@
     "platformClientSecret": "<client-secret>"
   },
   "database": {
-    "connectionString": "mongodb://ferretdb:27017",
+    "connectionString": "mongodb://ferretdb/",
     "dbName": "ferret_demo"
   },
   "infrastructure": {
