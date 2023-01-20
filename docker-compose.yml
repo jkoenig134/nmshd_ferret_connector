@@ -8,7 +8,6 @@ services:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=ferretdb
-      - POSTGRES_HOST_AUTH_METHOD=trust
 
   ferretdb:
     image: ghcr.io/ferretdb/ferretdb:latest
