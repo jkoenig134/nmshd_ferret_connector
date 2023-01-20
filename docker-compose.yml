@@ -14,7 +14,7 @@ services:
     container_name: ferretdb
     restart: on-failure
     environment:
-      FERRETDB_POSTGRESQL_URL: postgres://user:password@postgres:5432/ferretdb
+      FERRETDB_POSTGRESQL_URL: postgres://user:password@postgres:5432/ferretdb?pool_max_conns=20
       FERRETDB_TELEMETRY: disable
       FERRETDB_LOG_LEVEL: error
     depends_on:
